@@ -17,8 +17,10 @@ dependencies {
     compile group: "org.springframework", name: "spring-aop", version: "$springVersion"
     compile group: "org.springframework", name: "spring-web", version: "$springVersion"
     compile group: "org.springframework", name: "spring-webmvc", version: "$springVersion"
-    compile group: "log4j", name: "log4j", version: "1.2.17"
-    compile group: "org.slf4j", name: "slf4j-log4j12", version: "1.7.12"
+
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
+    compile 'org.apache.logging.log4j:log4j-core:2.5'
+    compile 'org.apache.logging.log4j:log4j-api:2.5'
 
     providedCompile "javax.servlet:jsp-api:2.0"
 
@@ -27,9 +29,4 @@ dependencies {
     testCompile group: "org.springframework", name: "spring-test", version: "$springVersion"
 }
 
-jettyRunWar {
-    httpPort 8080
-    stopPort 8383
-    stopKey 'terminator'
-}
 

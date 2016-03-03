@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Properties>
+        <Property name="log-path">logs</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%-5p] [%-20t] %C : %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework.data.mongodb" level="debug"/>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="ROLL"/>
+        </Root>
+    </Loggers>
+</Configuration>
