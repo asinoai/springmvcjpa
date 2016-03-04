@@ -1,4 +1,3 @@
-/out
 /*.iml
 /build
 /documentation
@@ -6,7 +5,7 @@
 !/.idea/codeStyleSettings.xml
 !/.idea/inspectionProfiles
 /.idea/inspectionProfiles/*
-!/.idea/inspectionProfiles/rivo.xml
+!/.idea/inspectionProfiles/springmvcjpa.xml
 !/.idea/inspectionProfiles/Project_Default.xml
 /.gradle
 /.sonar
