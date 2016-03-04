@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="info">
+<Configuration status="debug">
     <Properties>
         <Property name="log-path">logs</Property>
     </Properties>
@@ -10,10 +10,8 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="org.springframework.data.mongodb" level="debug"/>
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="STDOUT"/>
-            <AppenderRef ref="ROLL"/>
         </Root>
     </Loggers>
 </Configuration>
