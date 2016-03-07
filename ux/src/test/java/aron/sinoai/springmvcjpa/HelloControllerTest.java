@@ -1,5 +1,6 @@
 package aron.sinoai.springmvcjpa;
 
+import aron.sinoai.springmvcjpa.spring.HelloController;
 import aron.sinoai.springmvcjpa.spring.WebConfig;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,14 +20,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
+//testing framework is like that: uses exception rather assertion
+@SuppressWarnings({"ProhibitedExceptionDeclared", "JUnitTestMethodWithNoAssertions", "SuppressionAnnotation"})
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {WebConfig.class})
+@ContextConfiguration(classes = WebConfig.class)
 @WebAppConfiguration
-public class AppTests {
+public class HelloControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    protected WebApplicationContext wac;
+    private WebApplicationContext wac;
 
     @Before
     public void setup() {
@@ -37,7 +40,7 @@ public class AppTests {
     public void simple() throws Exception {
         mockMvc.perform(get("/testHello"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("hello"))
-                .andExpect(model().attribute("message", is("Hello world!")));
+                .andExpect(view().name(HelloController.HELLO_VIEW_TAG))
+                .andExpect(model().attribute(HelloController.MESSAGE_PARAMETER_TAG, is(HelloController.SAMPLE_TEXT)));
     }
 }

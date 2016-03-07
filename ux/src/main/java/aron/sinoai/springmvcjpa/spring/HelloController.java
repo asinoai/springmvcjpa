@@ -13,11 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HelloController {
 	private static final Logger LOGGER = LogManager.getLogger(HelloController.class);
 
+	public static final String MESSAGE_PARAMETER_TAG = "message";
+
+	public static final String HELLO_VIEW_TAG = "hello";
+
+	public static final String SAMPLE_TEXT = "Hello world!";
+
 	@RequestMapping(method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+	public String printWelcome(final ModelMap model) {
 		LOGGER.info("lala");
 
-		model.addAttribute("message", "Hello world!");
-		return "hello";
+		model.addAttribute(MESSAGE_PARAMETER_TAG, SAMPLE_TEXT);
+		return HELLO_VIEW_TAG;
 	}
 }
