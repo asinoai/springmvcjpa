@@ -14,14 +14,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan
 public class WebConfig extends WebMvcConfigurerAdapter {
 
+
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
         registry.addResourceHandler("/xml/**").addResourceLocations("/xml/");
     }
 
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+    public void configureDefaultServletHandling(final DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
 
@@ -34,5 +35,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         return result;
     }
+
+
 
 }
