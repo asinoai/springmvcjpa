@@ -15,7 +15,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 
