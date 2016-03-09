@@ -1,6 +1,7 @@
 package aron.sinoai.springmvcjpa.spring;
 
 
+import aron.sinoai.springmvcjpa.common.entities.Shop;
 import aron.sinoai.springmvcjpa.common.repository.IShopRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,9 +34,14 @@ public class HelloController {
     @Transactional
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(final ModelMap model) {
-		LOGGER.info("lala");
+		LOGGER.info("welcome!");
 
-		model.addAttribute(MESSAGE_PARAMETER_TAG, SAMPLE_TEXT);
+		final Shop entity = new Shop();
+        entity.setName("test");
+        entity.setEmplNumber(1);
+        final Shop savedEntity = shopRepository.save(entity);
+
+        model.addAttribute(MESSAGE_PARAMETER_TAG, SAMPLE_TEXT);
 		return HELLO_VIEW_TAG;
 	}
 }

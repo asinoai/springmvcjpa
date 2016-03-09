@@ -26,8 +26,6 @@ public class PersistenceConfig {
 
     public static final String TRUE_TAG = "true";
 
-
-
     @Bean
     public DataSource dataSource(@Value("${driver.classname}") final String driverClassName, @Value("${connection.string}") final String connectionString) {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
