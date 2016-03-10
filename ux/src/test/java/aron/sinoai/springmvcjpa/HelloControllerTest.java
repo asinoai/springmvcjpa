@@ -33,11 +33,15 @@ public class HelloControllerTest {
 
     @Before
     public void setup() {
+        //builder pattern so it's normal
+        //noinspection ChainedMethodCall
         this.mockMvc = webAppContextSetup(this.wac).build();
     }
 
     @Test
     public void simple() throws Exception {
+        //builder pattern so it's normal
+        //noinspection ChainedMethodCall
         mockMvc.perform(get("/testHello"))
                 .andExpect(status().isOk())
                 .andExpect(view().name(HelloController.HELLO_VIEW_TAG))
