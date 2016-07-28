@@ -18,14 +18,8 @@
 <script type="text/javascript">
 
     $(function () {
-        //$("#formFileDownloadSequenceID").attr("value", "123");
-        //$("#formFileDownload").trigger("submit");
-
-        var posting = $.post("fileDownload", {sequenceID: "123"});
-
-        posting.done(function (result) {
-            alert(result);
-        });
+        $("#formFileDownloadSequenceID").attr("value", "123");
+        $("#formFileDownload").trigger("submit");
     });
 </script>
 </body>
